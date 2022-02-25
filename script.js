@@ -9,29 +9,29 @@ let tie = 0;
 console.log(game())
 
 
-
-
-
 function game() {
-
+    // Run a game of 5 plays
     for (let i = 0; i < 5; i++) {
         playerSelection = prompt('Please choose between Rock, Paper and Scissors:');
         playerSelection = playerSelection.toLowerCase();
 
+        // Check if RPS is inputted
         if (playerSelection == 'rock' || playerSelection == 'paper' || playerSelection == 'scissors'){
             computerSelection = computerPlay();
             playRound(playerSelection, computerSelection, tie);
     
-            console.log('Computer ' + computerScore + ' - Player ' + playerScore + '      // Tie - ' + tie);
+            // Play results
+            console.log('Computer ' + computerScore + ' - Player ' + playerScore + '      //      Tie - ' + tie);
         }
         else {
+            // Ask to prompt new RPS if something else is inputed
             playerSelection = prompt('Could you choose between Rock, Paper and Scissors, please:');
             playerSelection = playerSelection.toLowerCase();
             i--;
         }
     }
 
-
+    // Game results
     if (playerSelection > computerSelection) {
         console.log('Good job! You won!');
     }
@@ -40,11 +40,12 @@ function game() {
     }
 }
 
+
 // Process play:
 function playRound() {
     playerSelection = playerSelection.toLowerCase();
-    // Player choose rock
 
+    // Player choose rock
     if (playerSelection == 'rock' && computerSelection == 'paper') {
         computerScore += 1;
         return computerScore, playerScore;
@@ -60,7 +61,6 @@ function playRound() {
 
 
     // Player choose scissors
-
     if (playerSelection == 'scissors' && computerSelection == 'rock') {
         computerScore += 1;
         playerScore;
@@ -76,9 +76,8 @@ function playRound() {
         return tie, computerScore, playerScore;
     }
 
-    
-    // Player choose paper
 
+    // Player choose paper
     if (playerSelection == 'paper' && computerSelection == 'scissors') {
         computerScore += 1;
         playerScore;
