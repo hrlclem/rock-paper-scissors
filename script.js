@@ -81,7 +81,6 @@ function playRound() {
         tie += 1;
         return tie, computerScore, playerScore;
     }
-    
 }
 
 
