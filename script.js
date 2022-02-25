@@ -8,11 +8,17 @@ let tie = 0;
 // GAME:
 console.log(game())
 
+
+
+
+
 function game() {
+
     for (let i = 0; i < 5; i++) {
         playerSelection = prompt('Please choose between Rock, Paper and Scissors:');
         playerSelection = playerSelection.toLowerCase();
-        if(playerSelection == 'rock' || playerSelection == 'paper' || playerSelection == 'scissors'){
+
+        if (playerSelection == 'rock' || playerSelection == 'paper' || playerSelection == 'scissors'){
             computerSelection = computerPlay();
             playRound(playerSelection, computerSelection, tie);
     
@@ -24,8 +30,9 @@ function game() {
             i--;
         }
     }
-    
-    if(playerSelection > computerSelection) {
+
+
+    if (playerSelection > computerSelection) {
         console.log('Good job! You won!');
     }
     else {
@@ -37,47 +44,52 @@ function game() {
 function playRound() {
     playerSelection = playerSelection.toLowerCase();
     // Player choose rock
-    if(playerSelection == 'rock' && computerSelection == 'paper') {
+
+    if (playerSelection == 'rock' && computerSelection == 'paper') {
         computerScore += 1;
         return computerScore, playerScore;
     }
-    else if(playerSelection == 'rock' && computerSelection == 'scissors') {
+    else if (playerSelection == 'rock' && computerSelection == 'scissors') {
         playerScore += 1;
         return computerScore, playerScore;
     }
-    else if(playerSelection == 'rock' && computerSelection == 'rock') {
+    else if (playerSelection == 'rock' && computerSelection == 'rock') {
         tie += 1;
         return tie, computerScore, playerScore;
     }
+
 
     // Player choose scissors
-    if(playerSelection == 'scissors' && computerSelection == 'rock') {
+
+    if (playerSelection == 'scissors' && computerSelection == 'rock') {
         computerScore += 1;
         playerScore;
         return computerScore, playerScore;
     }
-    else if(playerSelection == 'scissors' && computerSelection == 'paper') {
+    else if (playerSelection == 'scissors' && computerSelection == 'paper') {
         computerScore;
         playerScore += 1;
         return computerScore, playerScore;
     }
-    else if(playerSelection == 'scissors' && computerSelection == 'scissors') {
+    else if (playerSelection == 'scissors' && computerSelection == 'scissors') {
         tie += 1;
         return tie, computerScore, playerScore;
     }
 
+    
     // Player choose paper
-    if(playerSelection == 'paper' && computerSelection == 'scissors') {
+
+    if (playerSelection == 'paper' && computerSelection == 'scissors') {
         computerScore += 1;
         playerScore;
         return computerScore, playerScore;
     }
-    else if(playerSelection == 'paper' && computerSelection == 'rock') {
+    else if (playerSelection == 'paper' && computerSelection == 'rock') {
         computerScore;
         playerScore += 1;
         return computerScore, playerScore;
     }
-    else if(playerSelection == 'paper' && computerSelection == 'paper') {
+    else if (playerSelection == 'paper' && computerSelection == 'paper') {
         tie += 1;
         return tie, computerScore, playerScore;
     }
