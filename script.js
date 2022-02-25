@@ -3,6 +3,7 @@ let playerSelection;
 let computerSelection;
 let playerScore = 0;
 let computerScore = 0;
+let tie = 0;
 
 // GAME:
 console.log(game())
@@ -12,10 +13,18 @@ function game() {
         playerSelection = prompt('Please choose between Rock, Paper and Scissors:');
         playerSelection = playerSelection.toLowerCase();
         computerSelection = computerPlay();
+        playRound(playerSelection, computerSelection, tie);
 
-        console.log('Computer ' + computerScore + ' - Player ' + playerScore);
+        console.log('Computer ' + computerScore + ' - Player ' + playerScore + '      // Tie - ' + tie);
+        i++;
     }
-
+    
+    if(playerSelection > computerSelection) {
+        console.log('Good job! You won!');
+    }
+    else {
+        console.log('You lost... Would you like to play again?');
+    }
 }
 
 // Process play:
@@ -24,18 +33,16 @@ function playRound() {
     // Player choose rock
     if(playerSelection == 'rock' && computerSelection == 'paper') {
         computerScore += 1;
-        playerScore;
         return computerScore, playerScore;
     }
     else if(playerSelection == 'rock' && computerSelection == 'scissors') {
-        computerScore;
         playerScore += 1;
         return computerScore, playerScore;
     }
     else if(playerSelection == 'rock' && computerSelection == 'rock') {
-        computerScore;
-        playerScore;
-        return computerScore, playerScore;
+        tie += 1;
+        return tie, computerScore, playerScore;
+
     }
 
     // Player choose scissors
@@ -50,9 +57,8 @@ function playRound() {
         return computerScore, playerScore;
     }
     else if(playerSelection == 'scissors' && computerSelection == 'scissors') {
-        computerScore;
-        playerScore;
-        return computerScore, playerScore;
+        tie += 1;
+        return tie, computerScore, playerScore;
     }
 
     // Player choose paper
@@ -67,9 +73,8 @@ function playRound() {
         return computerScore, playerScore;
     }
     else if(playerSelection == 'paper' && computerSelection == 'paper') {
-        computerScore;
-        playerScore;
-        return computerScore, playerScore;
+        tie += 1;
+        return tie, computerScore, playerScore;
     }
     
 }
