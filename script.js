@@ -12,10 +12,18 @@ function game() {
     for (let i = 0; i < 5; i++) {
         playerSelection = prompt('Please choose between Rock, Paper and Scissors:');
         playerSelection = playerSelection.toLowerCase();
-        computerSelection = computerPlay();
-        playRound(playerSelection, computerSelection, tie);
+        if(playerSelection == 'rock' || playerSelection == 'paper' || playerSelection == 'scissors'){
+            computerSelection = computerPlay();
+            playRound(playerSelection, computerSelection, tie);
+    
+            console.log('Computer ' + computerScore + ' - Player ' + playerScore + '      // Tie - ' + tie);
+        }
+        else {
+            playerSelection = prompt('Could you choose between Rock, Paper and Scissors, please:');
+            playerSelection = playerSelection.toLowerCase();
+            i--;
+        }
 
-        console.log('Computer ' + computerScore + ' - Player ' + playerScore + '      // Tie - ' + tie);
     }
     
     if(playerSelection > computerSelection) {
@@ -88,7 +96,7 @@ function computerPlay() {
 
 
 
- 
+
 // // Process play:
 // function playRound() {
 //     playerSelection = playerSelection.toLowerCase();
