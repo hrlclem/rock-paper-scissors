@@ -16,7 +16,6 @@ function game() {
         playRound(playerSelection, computerSelection, tie);
 
         console.log('Computer ' + computerScore + ' - Player ' + playerScore + '      // Tie - ' + tie);
-        i++;
     }
     
     if(playerSelection > computerSelection) {
@@ -25,6 +24,7 @@ function game() {
     else {
         console.log('You lost... Would you like to play again?');
     }
+    
 }
 
 // Process play:
@@ -42,7 +42,6 @@ function playRound() {
     else if(playerSelection == 'rock' && computerSelection == 'rock') {
         tie += 1;
         return tie, computerScore, playerScore;
-
     }
 
     // Player choose scissors
