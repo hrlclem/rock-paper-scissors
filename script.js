@@ -23,7 +23,6 @@ function game() {
             playerSelection = playerSelection.toLowerCase();
             i--;
         }
-
     }
     
     if(playerSelection > computerSelection) {
@@ -32,7 +31,6 @@ function game() {
     else {
         console.log('You lost... Would you like to play again?');
     }
-
 }
 
 // Process play:
@@ -85,6 +83,7 @@ function playRound() {
     }
     
 }
+
 
 // Computer selection
 function computerPlay() {
