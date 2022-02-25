@@ -24,7 +24,7 @@ function game() {
     else {
         console.log('You lost... Would you like to play again?');
     }
-    
+
 }
 
 // Process play:
@@ -88,8 +88,7 @@ function computerPlay() {
 
 
 
-
-
+ 
 // // Process play:
 // function playRound() {
 //     playerSelection = playerSelection.toLowerCase();
