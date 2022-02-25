@@ -4,20 +4,16 @@ let computerSelection = computerPlay();
 
 // GAME:
 playerSelection = playerSelection.toLowerCase();
-console.log('Computer choose ' + computerSelection.toUpperCase() + ', and you choose ' + playerSelection.toUpperCase())
-console.log(playRound());
+console.log('Computer chose ' + computerSelection.toUpperCase() + ', and you chose ' + playerSelection.toUpperCase())
+console.log(playRound(playerSelection, computerSelection));
+   
 
-
-// Check if selection is valid
-function selectionCheck() {
-    if (playerSelection == 'rock' || playerSelection == 'paper' || playerSelection == 'scissors') {
-    }
-        else {
-            console.log('Please choose between Rock, Paper and Scissors!');
-            return;
-        }
+function game() {
+    for (let i = 0; i < 5; i++) {
+        
     }
 
+}
 
 
 // Process play:
@@ -29,7 +25,7 @@ function playRound() {
         return result;
     }
     else if(playerSelection == 'rock' && computerSelection == 'scissors') {
-        let result = 'You win! Rock beats Scssors';
+        let result = 'You win! Rock beats Scissors';
         return result;
     }
     else if(playerSelection == 'rock' && computerSelection == 'rock') {
@@ -72,5 +68,5 @@ function computerPlay() {
        return RPS[Math.floor(Math.random() * RPS.length)] 
     }
    
-
+   
 
