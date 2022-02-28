@@ -28,7 +28,6 @@ function game() {
             playerSelection = prompt('Could you choose between Rock, Paper and Scissors, please:');
             playerSelection = playerSelection.toLowerCase();
             i--;
-            
         }
     }
 
