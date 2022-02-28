@@ -22,12 +22,14 @@ function game() {
     
             // Play results
             console.log('Computer ' + computerScore + ' - Player ' + playerScore + '      //      Tie - ' + tie);
+        
         }
         else {
             // Ask to prompt new RPS if something else is inputed
             playerSelection = prompt('Could you choose between Rock, Paper and Scissors, please:');
             playerSelection = playerSelection.toLowerCase();
             i--;
+
         }
     }
 
