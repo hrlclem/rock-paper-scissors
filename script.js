@@ -1,3 +1,4 @@
+// Set all needed variables
 const RPS = ['rock', 'paper', 'scissors'];
 let playerSelection;
 let computerSelection;
@@ -18,9 +19,6 @@ const buttons = document.getElementById('buttons');
 const number = document.getElementById('number');
 
 
-
-
-
 // PSEUDO CODE:
 // When clicked, computer does selection with computerSelection
 // PlayRound runs to see the outcome
@@ -31,64 +29,62 @@ const number = document.getElementById('number');
 
 
 
+
+// PLAY FUNCTIONS
+
 // Launch game
 play.addEventListener('click', () => {
+    hidePlay(); 
     showNumber();
-    hidePlay();
 });
+
 
 // Select number of games
 submit.addEventListener('click', () => {
-    showButtons();
     hideNumber();
-    gameVal = document.querySelector('input').value;
+    showButtons();
+    gameVal = document.querySelector('input').value;    // Saves number of games' value
 });
-
-
 
 
 // Select Move
 rock.addEventListener('click', () => {
-    game();
-    playRound();
-    i++;
-    // Display results 
-    if (i == gameVal) {result();}
+    game();                                             // Launch game
+    i++;                                                // Count number of games
+    if (i == gameVal) {result();}                       // If number of games == games' value, show results
 });
 
 paper.addEventListener('click', () => {
-    game();
-    playRound();
-    i++;
-    // Display results 
-    if (i == gameVal) {result();}
+    game();                                             // Launch game
+    i++;                                                // Count number of games
+    if (i == gameVal) {result();}                       // If number of games == games' value, show results
 });
 
 scissors.addEventListener('click', () => {
-    game();
-    playRound();
-    i++;
-    // Display results 
-    if (i == gameVal) {result();}
+    game();                                             // Launch game
+    i++;                                                // Count number of games
+    if (i == gameVal) {result();}                       // If number of games == games' value, show results
 });
 
 
 
 
-// Launch game
-function game() {
-    computerSelection = computerPlay();
-    playRound(playerSelection, computerSelection, tie);
 
-    // Play results
-    console.log('Computer ' + computerScore + ' - Player ' + playerScore + '      //      Tie - ' + tie);        
+
+
+
+// GAME PROCESSING FUNCTIONS
+
+function game() {               // Launch game
+    computerSelection = computerPlay();                         // Computer chooses
+    playRound(playerSelection, computerSelection, tie);         // Add points depending on selections
+    console.log('Computer ' + computerScore +                   // Display results
+                ' - Player ' + playerScore + 
+                '      //      Tie - ' + tie);        
 };
 
 
-
-
-// Game results TO DOOOOOOOOOOOOOOOO
-function result() {
+function result() {             // Game results TO DOOOOOOOOOOOOOOOO
     if(playerSelection > computerSelection) {
         results.textContent = "You won!"
     }
@@ -98,9 +94,7 @@ function result() {
 }
 
 
-
-// Process play:
-function playRound() {
+function playRound() {          // Process play:
 
     // Player choose rock
     if (playerSelection == 'rock' && computerSelection == 'paper') {
@@ -152,19 +146,15 @@ function playRound() {
 };
 
 
-
-
-
-// Computer selection
-function computerPlay() {
+function computerPlay() {           // Computer selection
     return RPS[Math.floor(Math.random() * RPS.length)] 
- };
+};
 
 
 
+ // DISPLAY FUNCTIONS
 
-// Hide play div
-function hidePlay() {
+function hidePlay() {               // Hide play div
     if (playSentence.style.display === "none") {
       playSentence.style.display = "block";
     } else {
@@ -172,15 +162,11 @@ function hidePlay() {
     }
 }
 
-
- // Display the selection of number of games
- function showNumber() {
+function showNumber() {            // Display the selection of number of games
     document.getElementById('number').style.display = "block";
- }
+}
 
-
-// Hide number div
-function hideNumber() {
+function hideNumber() {             // Hide number div
     if (number.style.display === "none") {
       number.style.display = "block";
     } else {
@@ -188,8 +174,6 @@ function hideNumber() {
     }
 }
 
-
- // Display buttons to choose from 3 moves
-function showButtons() {
+function showButtons() {            // Display buttons to choose from 3 moves
     document.getElementById('buttons').style.display = "block";
  }
