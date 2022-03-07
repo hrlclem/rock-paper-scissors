@@ -11,9 +11,9 @@ console.log(game())
 
 function game() {
     // Run a game of 5 plays
-    for (let i = 0; i < 5; i++) {
-        playerSelection = prompt('Please choose between Rock, Paper and Scissors:');
-        playerSelection = playerSelection.toLowerCase();
+    // for (let i = 0; i < 5; i++) {
+    //     playerSelection = prompt('Please choose between Rock, Paper and Scissors:');
+    //     playerSelection = playerSelection.toLowerCase();
 
         // Check if RPS is inputted
         if (playerSelection == 'rock' || playerSelection == 'paper' || playerSelection == 'scissors'){
