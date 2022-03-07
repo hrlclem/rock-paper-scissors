@@ -5,16 +5,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="style.css">
 </head>
  
 <body>
-    <div> Please click on LET'S PLAY to start the game. </div>
-    <button name="play">LET'S PLAY!</button>
+    <div id="playSentence"> Please click on LET'S PLAY to start the game. 
+        <button name="play">LET'S PLAY!</button>
+    </div>
 
-    <div> Select your move from one of those buttons: </div>
-    <button name="rock">Rock!</button>
-    <button name="paper">Paper!</button>
-    <button name="scissors">Scissors!</button>
+    <div id="number"> How many games would you like to play?
+        <input id='input' name="numberGames" min="1" max="10">
+        <button name="submit"> Submit </button>
+    </div>
+
+
+    <div id="buttons"> Select your move from one of those buttons: 
+        <button name="rock" onclick="playerSelection = 'rock'">Rock!</button>
+        <button name="paper" onclick="playerSelection = 'paper'">Paper!</button>
+        <button name="scissors" onclick="playerSelection = 'scissors'">Scissors!</button>
+    </div>
+
+    <div id="results">
+        
+    </div>
  
 <script src="script.js"></script>
 

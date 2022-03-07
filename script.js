@@ -1,19 +1,27 @@
 const RPS = ['rock', 'paper', 'scissors'];
 let playerSelection;
 let computerSelection;
+let gameVal;
 let playerScore = 0;
 let computerScore = 0;
 let tie = 0;
+let i = 0;
 
 // Set all selectors
 const rock = document.querySelector('button[name="rock"]');
 const paper = document.querySelector('button[name="paper"]');
 const scissors = document.querySelector('button[name="scissors"]');
 const play = document.querySelector('button[name="play"]');
+const submit = document.querySelector('button[name="submit"]');
+const playSentence = document.getElementById('playSentence');
+const buttons = document.getElementById('buttons');
+const number = document.getElementById('number');
+
+
+
 
 
 // PSEUDO CODE:
-// Launch game, ask to choose your move by clicking a button
 // When clicked, computer does selection with computerSelection
 // PlayRound runs to see the outcome
 // Then score is processed and repeats 5 times
@@ -21,28 +29,78 @@ const play = document.querySelector('button[name="play"]');
 // Add div in DOM that shows final result after 5 games
 
 
+
+
 // Launch game
 play.addEventListener('click', () => {
-    game();
+    showNumber();
+    hidePlay();
+});
+
+// Select number of games
+submit.addEventListener('click', () => {
+    showButtons();
+    hideNumber();
+    gameVal = document.querySelector('input').value;
 });
 
 
+
+
+// Select Move
 rock.addEventListener('click', () => {
-    playerSelection == 'rock';
+    game();
+    playRound();
+    i++;
+    // Display results 
+    if (i == gameVal) {result();}
 });
 
 paper.addEventListener('click', () => {
-    playerSelection == 'paper';
+    game();
+    playRound();
+    i++;
+    // Display results 
+    if (i == gameVal) {result();}
 });
 
 scissors.addEventListener('click', () => {
-    playerSelection == 'scissors';
+    game();
+    playRound();
+    i++;
+    // Display results 
+    if (i == gameVal) {result();}
 });
+
+
+
+
+// Launch game
+function game() {
+    computerSelection = computerPlay();
+    playRound(playerSelection, computerSelection, tie);
+
+    // Play results
+    console.log('Computer ' + computerScore + ' - Player ' + playerScore + '      //      Tie - ' + tie);        
+};
+
+
+
+
+// Game results TO DOOOOOOOOOOOOOOOO
+function result() {
+    if(playerSelection > computerSelection) {
+        results.textContent = "You won!"
+    }
+    else {
+        results.textContent = "You lost... Would you like to play again?";
+    }
+}
+
 
 
 // Process play:
 function playRound() {
-    // playerSelection = playerSelection.toLowerCase();
 
     // Player choose rock
     if (playerSelection == 'rock' && computerSelection == 'paper') {
@@ -97,41 +155,6 @@ function playRound() {
 
 
 
-function game() {
-    // Run a game of 5 plays
-    for (let i = 0; i < 5; i++) {
-        playerSelection = prompt('Please choose between Rock, Paper and Scissors:');
-        playerSelection = playerSelection.toLowerCase();
-
-        // Check if RPS is inputted
-        if (playerSelection == 'rock' || playerSelection == 'paper' || playerSelection == 'scissors'){
-            computerSelection = computerPlay();
-            playRound(playerSelection, computerSelection, tie);
-    
-            // Play results
-            console.log('Computer ' + computerScore + ' - Player ' + playerScore + '      //      Tie - ' + tie);
-        
-        }
-        else {
-            // Ask to prompt new RPS if something else is inputed
-            playerSelection = prompt('Could you choose between Rock, Paper and Scissors, please:');
-            playerSelection = playerSelection.toLowerCase();
-            i--;
-        }
-    }
-
-    // Game results
-    if (playerSelection > computerSelection) {
-        console.log('Good job! You won!');
-    }
-    else {
-        console.log('You lost... Would you like to play again?');
-    }
-}
-
-
-
-
 // Computer selection
 function computerPlay() {
     return RPS[Math.floor(Math.random() * RPS.length)] 
@@ -140,52 +163,33 @@ function computerPlay() {
 
 
 
+// Hide play div
+function hidePlay() {
+    if (playSentence.style.display === "none") {
+      playSentence.style.display = "block";
+    } else {
+      playSentence.style.display = "none";
+    }
+}
 
 
+ // Display the selection of number of games
+ function showNumber() {
+    document.getElementById('number').style.display = "block";
+ }
 
-// // Process play:
-// function playRound() {
-//     playerSelection = playerSelection.toLowerCase();
-//     // Player choose rock
-//     if(playerSelection == 'rock' && computerSelection == 'paper') {
-//         let result = 'You lose! Paper beats Rock';
-//         return result;
-//     }
-//     else if(playerSelection == 'rock' && computerSelection == 'scissors') {
-//         let result = 'You win! Rock beats Scissors';
-//         return result;
-//     }
-//     else if(playerSelection == 'rock' && computerSelection == 'rock') {
-//         let result = 'Its a tie!';
-//         return result;
-//     }
 
-//     // Player choose scissors
-//     if(playerSelection == 'scissors' && computerSelection == 'rock') {
-//         let result = 'You lose! Rock beats Scissors';
-//         return result;
-//     }
-//     else if(playerSelection == 'scissors' && computerSelection == 'paper') {
-//         let result = 'You win! Scissors beats Paper';
-//         return result;
-//     }
-//     else if(playerSelection == 'scissors' && computerSelection == 'scissors') {
-//         let result = 'Its a tie!';
-//         return result;
-//     }
+// Hide number div
+function hideNumber() {
+    if (number.style.display === "none") {
+      number.style.display = "block";
+    } else {
+      number.style.display = "none";
+    }
+}
 
-//     // Player choose paper
-//     if(playerSelection == 'paper' && computerSelection == 'scissors') {
-//         let result = 'You lose! Scissors beats Paper';
-//         return result;
-//     }
-//     else if(playerSelection == 'paper' && computerSelection == 'rock') {
-//         let result = 'You win! Paper beats Rock';
-//         return result;
-//     }
-//     else if(playerSelection == 'paper' && computerSelection == 'paper') {
-//         let result = 'Its a tie!';
-//         return result;
-//     }
-    
-// }
+
+ // Display buttons to choose from 3 moves
+function showButtons() {
+    document.getElementById('buttons').style.display = "block";
+ }
