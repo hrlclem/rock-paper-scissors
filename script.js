@@ -71,8 +71,6 @@ scissors.addEventListener('click', () => {
 
 
 
-
-
 // GAME PROCESSING FUNCTIONS
 
 function game() {               // Launch game
