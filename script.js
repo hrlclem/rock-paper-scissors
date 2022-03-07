@@ -51,19 +51,19 @@ submit.addEventListener('click', () => {
 rock.addEventListener('click', () => {
     game();                                             // Launch game
     i++;                                                // Count number of games
-    if (i == gameVal) {result();}                       // If number of games == games' value, show results
+    if (i == gameVal) {resultsDiv();}                       // If number of games == games' value, show results
 });
 
 paper.addEventListener('click', () => {
     game();                                             // Launch game
     i++;                                                // Count number of games
-    if (i == gameVal) {result();}                       // If number of games == games' value, show results
+    if (i == gameVal) {resultsDiv();}                       // If number of games == games' value, show results
 });
 
 scissors.addEventListener('click', () => {
     game();                                             // Launch game
     i++;                                                // Count number of games
-    if (i == gameVal) {result();}                       // If number of games == games' value, show results
+    if (i == gameVal) {resultsDiv();}                       // If number of games == games' value, show results
 });
 
 
@@ -84,14 +84,6 @@ function game() {               // Launch game
 };
 
 
-function result() {             // Game results TO DOOOOOOOOOOOOOOOO
-    if(playerSelection > computerSelection) {
-        results.textContent = "You won!"
-    }
-    else {
-        results.textContent = "You lost... Would you like to play again?";
-    }
-}
 
 
 function playRound() {          // Process play:
@@ -150,6 +142,20 @@ function computerPlay() {           // Computer selection
     return RPS[Math.floor(Math.random() * RPS.length)] 
 };
 
+function resultsDiv(){              // Display result
+    const newDiv = document.createElement("div");
+    newDiv.classList.add('results');
+    document.body.appendChild(newDiv);
+    if(playerSelection > computerSelection) {
+            newDiv.textContent += "You won!"
+        }
+        else {
+            newDiv.textContent += "You lost... Would you like to play again?";
+    }
+ }
+
+
+
 
 
  // DISPLAY FUNCTIONS
@@ -177,3 +183,4 @@ function hideNumber() {             // Hide number div
 function showButtons() {            // Display buttons to choose from 3 moves
     document.getElementById('buttons').style.display = "block";
  }
+
