@@ -5,41 +5,52 @@ let playerScore = 0;
 let computerScore = 0;
 let tie = 0;
 
+const rock = document.querySelector('button[name="rock"]');
+const paper = document.querySelector('button[name="paper"]');
+const scissors = document.querySelector('button[name="scissors"]');
+
+rock.addEventListener('click', () => {
+    console.log('rock');
+});
+paper.addEventListener('click', () => {
+    console.log('paper');
+});
+
 // GAME:
-console.log(game())
+//console.log(game());
 
 
-function game() {
-    // Run a game of 5 plays
-    // for (let i = 0; i < 5; i++) {
-    //     playerSelection = prompt('Please choose between Rock, Paper and Scissors:');
-    //     playerSelection = playerSelection.toLowerCase();
+// function game() {
+//     // Run a game of 5 plays
+//     for (let i = 0; i < 5; i++) {
+//         playerSelection = prompt('Please choose between Rock, Paper and Scissors:');
+//         playerSelection = playerSelection.toLowerCase();
 
-        // Check if RPS is inputted
-        if (playerSelection == 'rock' || playerSelection == 'paper' || playerSelection == 'scissors'){
-            computerSelection = computerPlay();
-            playRound(playerSelection, computerSelection, tie);
+//         // Check if RPS is inputted
+//         if (playerSelection == 'rock' || playerSelection == 'paper' || playerSelection == 'scissors'){
+//             computerSelection = computerPlay();
+//             playRound(playerSelection, computerSelection, tie);
     
-            // Play results
-            console.log('Computer ' + computerScore + ' - Player ' + playerScore + '      //      Tie - ' + tie);
+//             // Play results
+//             console.log('Computer ' + computerScore + ' - Player ' + playerScore + '      //      Tie - ' + tie);
         
-        }
-        else {
-            // Ask to prompt new RPS if something else is inputed
-            playerSelection = prompt('Could you choose between Rock, Paper and Scissors, please:');
-            playerSelection = playerSelection.toLowerCase();
-            i--;
-        }
-    }
+//         }
+//         else {
+//             // Ask to prompt new RPS if something else is inputed
+//             playerSelection = prompt('Could you choose between Rock, Paper and Scissors, please:');
+//             playerSelection = playerSelection.toLowerCase();
+//             i--;
+//         }
+//     }
 
-    // Game results
-    if (playerSelection > computerSelection) {
-        console.log('Good job! You won!');
-    }
-    else {
-        console.log('You lost... Would you like to play again?');
-    }
-}
+//     // Game results
+//     if (playerSelection > computerSelection) {
+//         console.log('Good job! You won!');
+//     }
+//     else {
+//         console.log('You lost... Would you like to play again?');
+//     }
+// }
 
 
 // Process play:
@@ -93,13 +104,13 @@ function playRound() {
         tie += 1;
         return tie, computerScore, playerScore;
     }
-}
+};
 
 
 // Computer selection
 function computerPlay() {
     return RPS[Math.floor(Math.random() * RPS.length)] 
- }
+ };
 
 
 
@@ -153,8 +164,3 @@ function computerPlay() {
 //     }
     
 // }
-
-
-   
-   
-
