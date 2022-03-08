@@ -20,14 +20,12 @@ const number = document.getElementById('number');
 const integer = document.getElementById('integer');
 
 
-// PSEUDO CODE:
-// When clicked, computer does selection with computerSelection
-// PlayRound runs to see the outcome
-// Then score is processed and repeats 5 times
-// For each time, div shows the result of the round.
-// Add div in DOM that shows final result after 5 games
 
-
+// TO DOOOOOOOOOOOOO fix the empty submit button and field, 
+// if clicked more than 5 times "Hey kiddo, I can't do anything for you", 
+// After 5 sec, reset back to step1
+//
+// Design everything to make it proper game
 
 
 
@@ -50,7 +48,7 @@ submit.addEventListener('click', () => {
     else {
         hideNumber();
         showInteger();
-        emptyField()
+        emptyField() 
     }
 });
 
