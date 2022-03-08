@@ -47,33 +47,32 @@ submit.addEventListener('click', () => {
         showButtons();
         hideNumber();
         hideInteger();
-        console.log(gameVal);
     } 
     else {
         hideNumber();
         showInteger();
         emptyField();
-        console.log(gameVal);
     }
 });
+
 
 // Select Move
 rock.addEventListener('click', () => {
     game();                                                 // Launch game
     i++;                                                    // Count number of games
-    if (i == gameVal) {resultsDiv();}                       // If number of games == games' value, show results
+    if (i == gameVal) {resultsDiv();hideButtons();}         // If number of games == games' value, show results and hide choice
 });
 
 paper.addEventListener('click', () => {
     game();                                                 // Launch game
     i++;                                                    // Count number of games
-    if (i == gameVal) {resultsDiv();}                       // If number of games == games' value, show results
+    if (i == gameVal) {resultsDiv();hideButtons();}         // If number of games == games' value, show results and hide choice
 });
 
 scissors.addEventListener('click', () => {
     game();                                                 // Launch game
     i++;                                                    // Count number of games
-    if (i == gameVal) {resultsDiv();}                       // If number of games == games' value, show results
+    if (i == gameVal) {resultsDiv();hideButtons();}         // If number of games == games' value, show results and hide choice
 });
 
 
@@ -179,12 +178,6 @@ function hidePlay() {               // Hide play div
 function showNumber() {            // Display the selection of number of games
     document.getElementById('number').style.display = "block";
 }
-
-
-function showInteger() {          // Ask to select an integer
-    document.getElementById('integer').style.display = "block";
-}
-
 function hideNumber() {             // Hide number div
     if (number.style.display === "none") {
       number.style.display = "block";
@@ -193,6 +186,10 @@ function hideNumber() {             // Hide number div
     }
 }
 
+
+function showInteger() {          // Ask to select an integer
+    document.getElementById('integer').style.display = "block";
+}
 function hideInteger() {             // Hide integer div
     if (integer.style.display === "none") {
       integer.style.display = "block";
@@ -201,9 +198,20 @@ function hideInteger() {             // Hide integer div
     }
 }
 
+
+
+
 function showButtons() {            // Display buttons to choose from 3 moves
     document.getElementById('buttons').style.display = "block";
  }
+function hideButtons() {            // Hide buttons to choose
+    if (buttons.style.display === "none") {
+        buttons.style.display = "block";
+      } else {
+        buttons.style.display = "none";
+      }
+}
+
 
  function emptyField() {            // Empty input field
     const emptyField = document.getElementById('input').value= '';
