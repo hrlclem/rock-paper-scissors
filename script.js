@@ -59,7 +59,6 @@ submit.addEventListener('click', () => {
     }
 });
 
-
 // Maybe useless TO FIXX
 submit2.addEventListener('click', () => {
     numberGames();
