@@ -14,7 +14,10 @@ const paper = document.querySelector('button[name="paper"]');
 const scissors = document.querySelector('button[name="scissors"]');
 const play = document.querySelector('button[name="play"]');
 const submit = document.querySelector('button[name="submit"]');
+const submit2 = document.querySelector('button[name="submit2"]');
 const playSentence = document.getElementById('playSentence');
+const input = document.getElementById('input');
+const input2 = document.getElementById('input2');
 const buttons = document.getElementById('buttons');
 const number = document.getElementById('number');
 //const integer = document.getElementById('integer');
@@ -43,6 +46,7 @@ play.addEventListener('click', () => {
 // Select number of games
 submit.addEventListener('click', () => {
     numberGames();
+    submit.value = gameVal;
     if (gameVal > 0) {
         showButtons();
         hideNumber();
@@ -50,6 +54,9 @@ submit.addEventListener('click', () => {
     } 
     else {
         showInteger();
+        hideNumber()
+        resetField();
+        console.log(resetField);
     }
 });
 
@@ -200,25 +207,32 @@ function hideNumber() {
     }
 }
 
-// Ask to select an integer or Hide
+// Ask to select an integer or Hide TO FIX
 function showInteger() {         
-    number.textContent = "Please select a value between 1 and 10:"
-    const newInput = document.createElement("button");
-    document.number.appendChild(newInput);
+    document.getElementById('integer').style.display = "block";
+}
+function hideInteger() {            
+    if (integer.style.display === "none") {
+      integer.style.display = "block";
+    } else {
+      integer.style.display = "none";
+    }
 }
 
-// function hideInteger() {            
-//     if (integer.style.display === "none") {
-//       integer.style.display = "block";
-//     } else {
-//       integer.style.display = "none";
-//     }
-// }
+// Reset integer button and field
+function resetField() {         
+    document.getElementById('input2').reset();
+    document.getElementById('submit2').reset();
+    submit.value = '';
+}
+
+
 
 // Display/Hide buttons to choose from 3 moves
 function showButtons() {            
     document.getElementById('buttons').style.display = "block";
  }
+
 function hideButtons() {
     if (buttons.style.display === "none") {
         buttons.style.display = "block";
