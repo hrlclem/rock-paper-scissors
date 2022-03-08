@@ -56,7 +56,19 @@ submit.addEventListener('click', () => {
         showInteger();
         hideNumber()
         resetField();
-        console.log(resetField);
+    }
+});
+// Maybe useless
+submit2.addEventListener('click', () => {
+    numberGames();
+    submit2.value = gameVal;
+    if (gameVal > 0) {
+        showButtons();
+        hideNumber();
+        hideInteger();
+    } 
+    else {
+        resetField();
     }
 });
 
@@ -221,9 +233,7 @@ function hideInteger() {
 
 // Reset integer button and field
 function resetField() {         
-    document.getElementById('input2').reset();
-    document.getElementById('submit2').reset();
-    submit.value = '';
+    input2.value= "";
 }
 
 
