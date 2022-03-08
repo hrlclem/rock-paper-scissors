@@ -50,7 +50,7 @@ submit.addEventListener('click', () => {
     else {
         hideNumber();
         showInteger();
-        emptyField();
+        emptyField()
     }
 });
 
@@ -232,5 +232,6 @@ function hideButtons() {            // Hide buttons to choose
 
 
  function emptyField() {            // Empty input field
-    const emptyField = document.getElementById('input').value= '';
+    buttons.value = '';
+    submit.value = '';
  }
