@@ -10,3 +10,7 @@ body{
 #number {
     display: none;
 }
+
+#integer {
+    display: none;
+}

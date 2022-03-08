@@ -17,6 +17,7 @@ const submit = document.querySelector('button[name="submit"]');
 const playSentence = document.getElementById('playSentence');
 const buttons = document.getElementById('buttons');
 const number = document.getElementById('number');
+const integer = document.getElementById('integer');
 
 
 // PSEUDO CODE:
@@ -41,34 +42,47 @@ play.addEventListener('click', () => {
 
 // Select number of games
 submit.addEventListener('click', () => {
-    hideNumber();
-    showButtons();
-    gameVal = document.querySelector('input').value;    // Saves number of games' value
+    numberGames();
+    if (gameVal > 0) {
+        showButtons();
+        hideNumber();
+        hideInteger();
+        console.log(gameVal);
+    } 
+    else {
+        hideNumber();
+        showInteger();
+        emptyField();
+        console.log(gameVal);
+    }
 });
-
 
 // Select Move
 rock.addEventListener('click', () => {
-    game();                                             // Launch game
-    i++;                                                // Count number of games
+    game();                                                 // Launch game
+    i++;                                                    // Count number of games
     if (i == gameVal) {resultsDiv();}                       // If number of games == games' value, show results
 });
 
 paper.addEventListener('click', () => {
-    game();                                             // Launch game
-    i++;                                                // Count number of games
+    game();                                                 // Launch game
+    i++;                                                    // Count number of games
     if (i == gameVal) {resultsDiv();}                       // If number of games == games' value, show results
 });
 
 scissors.addEventListener('click', () => {
-    game();                                             // Launch game
-    i++;                                                // Count number of games
+    game();                                                 // Launch game
+    i++;                                                    // Count number of games
     if (i == gameVal) {resultsDiv();}                       // If number of games == games' value, show results
 });
 
 
 
 // GAME PROCESSING FUNCTIONS
+
+function numberGames() {
+    gameVal = document.querySelector('input').value;        // Saves number of games' value
+}
 
 function game() {               // Launch game
     computerSelection = computerPlay();                         // Computer chooses
@@ -82,7 +96,6 @@ function game() {               // Launch game
 
 
 function playRound() {          // Process play:
-
     // Player choose rock
     if (playerSelection == 'rock' && computerSelection == 'paper') {
         computerScore += 1;
@@ -167,6 +180,11 @@ function showNumber() {            // Display the selection of number of games
     document.getElementById('number').style.display = "block";
 }
 
+
+function showInteger() {          // Ask to select an integer
+    document.getElementById('integer').style.display = "block";
+}
+
 function hideNumber() {             // Hide number div
     if (number.style.display === "none") {
       number.style.display = "block";
@@ -175,7 +193,18 @@ function hideNumber() {             // Hide number div
     }
 }
 
+function hideInteger() {             // Hide integer div
+    if (integer.style.display === "none") {
+      integer.style.display = "block";
+    } else {
+      integer.style.display = "none";
+    }
+}
+
 function showButtons() {            // Display buttons to choose from 3 moves
     document.getElementById('buttons').style.display = "block";
  }
 
+ function emptyField() {            // Empty input field
+    const emptyField = document.getElementById('input').value= '';
+ }
