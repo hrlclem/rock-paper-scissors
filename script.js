@@ -17,12 +17,12 @@ const submit = document.querySelector('button[name="submit"]');
 const playSentence = document.getElementById('playSentence');
 const buttons = document.getElementById('buttons');
 const number = document.getElementById('number');
-const integer = document.getElementById('integer');
+//const integer = document.getElementById('integer');
 
 
 
 // TO DOOOOOOOOOOOOO fix the empty submit button and field, 
-// if clicked more than 5 times "Hey kiddo, I can't do anything for you", 
+// if clicked more than 5 times "I can't do anything for you...", 
 // After 5 sec, reset back to step1
 //
 // Design everything to make it proper game
@@ -49,9 +49,7 @@ submit.addEventListener('click', () => {
         hideInteger();
     } 
     else {
-        hideNumber();
         showInteger();
-        emptyField() 
     }
 });
 
@@ -88,7 +86,7 @@ scissors.addEventListener('click', () => {
 // GAME PROCESSING FUNCTIONS
 // Get number of games to play
 function numberGames() {
-    gameVal = document.querySelector('input').value;        // Saves number of games' value
+    gameVal = document.querySelector('input').value;            // Saves number of games' value
 }
 
 // Launch game
@@ -204,15 +202,18 @@ function hideNumber() {
 
 // Ask to select an integer or Hide
 function showInteger() {         
-    document.getElementById('integer').style.display = "block";
+    number.textContent = "Please select a value between 1 and 10:"
+    const newInput = document.createElement("button");
+    document.number.appendChild(newInput);
 }
-function hideInteger() {            
-    if (integer.style.display === "none") {
-      integer.style.display = "block";
-    } else {
-      integer.style.display = "none";
-    }
-}
+
+// function hideInteger() {            
+//     if (integer.style.display === "none") {
+//       integer.style.display = "block";
+//     } else {
+//       integer.style.display = "none";
+//     }
+// }
 
 // Display/Hide buttons to choose from 3 moves
 function showButtons() {            
@@ -225,9 +226,3 @@ function hideButtons() {
         buttons.style.display = "none";
       }
 }
-
-// Empty input field
- function emptyField() {            
-    buttons.value = '';
-    submit.value = '';
- }
