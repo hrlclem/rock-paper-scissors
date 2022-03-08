@@ -32,7 +32,6 @@ const integer = document.getElementById('integer');
 
 
 // PLAY FUNCTIONS
-
 // Launch game
 play.addEventListener('click', () => {
     hidePlay(); 
@@ -60,30 +59,40 @@ submit.addEventListener('click', () => {
 rock.addEventListener('click', () => {
     game();                                                 // Launch game
     i++;                                                    // Count number of games
-    if (i == gameVal) {resultsDiv();hideButtons();}         // If number of games == games' value, show results and hide choice
+    if (i == gameVal) {resultsDiv(); hideButtons();}        // If number of games == games' value, show results and hide choice
 });
 
 paper.addEventListener('click', () => {
     game();                                                 // Launch game
     i++;                                                    // Count number of games
-    if (i == gameVal) {resultsDiv();hideButtons();}         // If number of games == games' value, show results and hide choice
+    if (i == gameVal) {resultsDiv(); hideButtons();}        // If number of games == games' value, show results and hide choice
 });
 
 scissors.addEventListener('click', () => {
     game();                                                 // Launch game
     i++;                                                    // Count number of games
-    if (i == gameVal) {resultsDiv();hideButtons();}         // If number of games == games' value, show results and hide choice
+    if (i == gameVal) {resultsDiv(); hideButtons();}        // If number of games == games' value, show results and hide choice
 });
 
 
 
-// GAME PROCESSING FUNCTIONS
 
+
+
+
+
+
+
+
+
+// GAME PROCESSING FUNCTIONS
+// Get number of games to play
 function numberGames() {
     gameVal = document.querySelector('input').value;        // Saves number of games' value
 }
 
-function game() {               // Launch game
+// Launch game
+function game() {               
     computerSelection = computerPlay();                         // Computer chooses
     playRound(playerSelection, computerSelection, tie);         // Add points depending on selections
     console.log('Computer ' + computerScore +                   // Display results
@@ -92,9 +101,8 @@ function game() {               // Launch game
 };
 
 
-
-
-function playRound() {          // Process play:
+// Process play
+function playRound() {          
     // Player choose rock
     if (playerSelection == 'rock' && computerSelection == 'paper') {
         computerScore += 1;
@@ -144,22 +152,17 @@ function playRound() {          // Process play:
     }
 };
 
-
-function computerPlay() {           // Computer selection
+// Computer selection
+function computerPlay() {           
     return RPS[Math.floor(Math.random() * RPS.length)] 
 };
 
-function resultsDiv(){              // Display result
-    const newDiv = document.createElement("div");
-    newDiv.classList.add('results');
-    document.body.appendChild(newDiv);
-    if(playerSelection > computerSelection) {
-            newDiv.textContent += "You won!"
-        }
-        else {
-            newDiv.textContent += "You lost... Would you like to play again?";
-    }
- }
+
+
+
+
+
+
 
 
 
@@ -174,6 +177,21 @@ function hidePlay() {               // Hide play div
       playSentence.style.display = "none";
     }
 }
+
+
+// Display result
+function resultsDiv(){              
+    const newDiv = document.createElement("div");
+    newDiv.classList.add('results');
+    document.body.appendChild(newDiv);
+    if(playerSelection > computerSelection) {
+            newDiv.textContent += "You won!"
+        }
+        else {
+            newDiv.textContent += "You lost... Would you like to play again?";
+    }
+ }
+
 
 function showNumber() {            // Display the selection of number of games
     document.getElementById('number').style.display = "block";
