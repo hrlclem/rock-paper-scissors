@@ -58,6 +58,7 @@ submit.addEventListener('click', () => {
         resetField();
     }
 });
+
 // Maybe useless
 submit2.addEventListener('click', () => {
     numberGames();
