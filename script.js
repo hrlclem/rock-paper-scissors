@@ -26,6 +26,10 @@ const integer = document.getElementById('integer');
 // After 5 sec, reset back to step1
 //
 // Design everything to make it proper game
+//
+// Maybe update show/Hide to toggle
+//
+// Reduce code and optimize
 
 
 
@@ -35,7 +39,6 @@ play.addEventListener('click', () => {
     hidePlay(); 
     showNumber();
 });
-
 
 // Select number of games
 submit.addEventListener('click', () => {
@@ -51,7 +54,6 @@ submit.addEventListener('click', () => {
         emptyField() 
     }
 });
-
 
 // Select Move
 rock.addEventListener('click', () => {
@@ -97,7 +99,6 @@ function game() {
                 ' - Player ' + playerScore + 
                 '      //      Tie - ' + tie);        
 };
-
 
 // Process play
 function playRound() {          
@@ -166,16 +167,15 @@ function computerPlay() {
 
 
 
- // DISPLAY FUNCTIONS
-
-function hidePlay() {               // Hide play div
+// DISPLAY FUNCTIONS
+// Hide play div
+function hidePlay() {               
     if (playSentence.style.display === "none") {
       playSentence.style.display = "block";
     } else {
       playSentence.style.display = "none";
     }
 }
-
 
 // Display result
 function resultsDiv(){              
@@ -188,13 +188,13 @@ function resultsDiv(){
         else {
             newDiv.textContent += "You lost... Would you like to play again?";
     }
- }
+}
 
-
-function showNumber() {            // Display the selection of number of games
+// Display/Hide the selection of number of games
+function showNumber() {            
     document.getElementById('number').style.display = "block";
 }
-function hideNumber() {             // Hide number div
+function hideNumber() {             
     if (number.style.display === "none") {
       number.style.display = "block";
     } else {
@@ -202,11 +202,11 @@ function hideNumber() {             // Hide number div
     }
 }
 
-
-function showInteger() {          // Ask to select an integer
+// Ask to select an integer or Hide
+function showInteger() {         
     document.getElementById('integer').style.display = "block";
 }
-function hideInteger() {             // Hide integer div
+function hideInteger() {            
     if (integer.style.display === "none") {
       integer.style.display = "block";
     } else {
@@ -214,13 +214,11 @@ function hideInteger() {             // Hide integer div
     }
 }
 
-
-
-
-function showButtons() {            // Display buttons to choose from 3 moves
+// Display/Hide buttons to choose from 3 moves
+function showButtons() {            
     document.getElementById('buttons').style.display = "block";
  }
-function hideButtons() {            // Hide buttons to choose
+function hideButtons() {
     if (buttons.style.display === "none") {
         buttons.style.display = "block";
       } else {
@@ -228,8 +226,8 @@ function hideButtons() {            // Hide buttons to choose
       }
 }
 
-
- function emptyField() {            // Empty input field
+// Empty input field
+ function emptyField() {            
     buttons.value = '';
     submit.value = '';
  }
