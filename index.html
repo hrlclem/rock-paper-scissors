@@ -10,33 +10,33 @@
  
 
 <body>
+    
+    <div class='header'>ROCK PAPER SCISSORS </div>
     <div id="playSentence"> 
-        <div class='header'>ROCK PAPER SCISSORS </div>
         <div class='intro'>Wanna start a game? </div>
         <img src="rock-paper-scissors.png" class='playIcon' alt="RPS" width=20% height=20%>
         <button class= 'play' name="play">LET'S PLAY!</button>
     </div>
 
     <div id="launchPlay"> 
-        <p id="sentence1">How many games would you like to play?</p>
-        <p id="sentence2"> Please select a value between 1 and 10:</p>
-        <input id='input' name="numberGames" min="1" max="10">
-        <button name="submit"> READY TO RUUUMBLE </button>
+        <p id="sentence1" class="gamesSentence">How many games would you like to play?</p>
+        <p id="sentence2" class="betweenSentence"> Please select a value between 1 and 10:</p>
+        <input class='input' id='input' name="numberGames" min="1" max="10">
+        <button class='play' name="submit"> READY TO RUUUMBLE </button>
     </div>
 
 
-    <div id="buttons"> Select your move from one of those buttons: 
+    <div id="buttons"> 
+        <p class="moveSelect">Select your move</p>
         <button name="rock" onclick="playerSelection = 'rock'">Rock!</button>
         <button name="paper" onclick="playerSelection = 'paper'">Paper!</button>
         <button name="scissors" onclick="playerSelection = 'scissors'">Scissors!</button>
     </div>
-
+    
     <div class="footer"> Clément Hurel © All rights reserved, 2022</div>
 
 
- 
 <script src="script.js"></script>
-
 </body> 
  
 </html>

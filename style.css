@@ -5,6 +5,7 @@ body{
     background-color: #D1C4E9;
     color: black;
     margin: 0;
+    text-align:center;
 }
 
 .header {
@@ -56,6 +57,41 @@ body{
     padding: 5%;
 }
 
+.gamesSentence{
+    font-family: 'Bebas Neue', cursive;
+    color: #212121;
+    text-align:center;
+    font-size: 4vw;
+    padding-top:5%;
+}
+
+.input{
+    display:block;
+    text-align:center;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 5%;;
+    width: 30%;
+    box-sizing:border-box
+}
+
+.betweenSentence{
+    font-family: 'Bebas Neue', cursive;
+    color: #212121;
+    text-align:center;
+    font-size: 4vw;
+    padding-top:5%; 
+}
+
+.moveSelect{
+    font-family: 'Bebas Neue', cursive;
+    color: #212121;
+    text-align:center;
+    font-size: 4vw;
+    padding-top:5%; 
+}
+
 #buttons {
     display: none;
 }
@@ -79,8 +115,10 @@ body{
 .footer {
     font-family: arial;
     color: #212121;
-    text-align:center;
-    font-size: 1.5vw;
-    position:fixed;
-    bottom: 5px;
+    font-size: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
 }
+
