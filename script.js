@@ -55,8 +55,8 @@ submit.addEventListener('click', () => {
     } 
     else {
         toggle()
-        hideNumber()
         resetField();
+        console.log('bob');
     }
 });
 
@@ -204,9 +204,10 @@ function showNumber() {
 }
 
 function toggle() {
-    if (document.getElementById("sentence1").style.visibility === "visible") {
-        document.getElementById("sentence1").style.visibility = "hidden";
-        document.getElementById("sentence2").style.visibility === "visible";
+    if (sentence1.style.visibility === "visible") {
+        console.log('icansee');
+        document.getElementById("sentence1").style.visibility == "hidden";
+        document.getElementById("sentence2").style.visibility == "visible";
       }
 }
 
@@ -220,7 +221,7 @@ function hideNumber() {
 
 // Reset integer button and field
 function resetField() {         
-    input2.value = "";
+    input.value = "";
 }
 
 

@@ -16,7 +16,7 @@ body{
 }
 
 #sentence1 {
-    display: block;
+    display: inline-block;
     visibility: visible;
 }
 
