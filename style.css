@@ -7,10 +7,20 @@ body{
     display: none;
 }
 
-#number {
+#launchPlay {
     display: none;
 }
 
 #integer {
     display: none;
+}
+
+#sentence1 {
+    display: block;
+    visibility: visible;
+}
+
+#sentence2 {
+    display: none;
+    visibility: hidden;
 }

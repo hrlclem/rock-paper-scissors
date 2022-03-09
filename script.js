@@ -19,7 +19,9 @@ const playSentence = document.getElementById('playSentence');
 const input = document.getElementById('input');
 const input2 = document.getElementById('input2');
 const buttons = document.getElementById('buttons');
-const number = document.getElementById('number');
+const launchPlay = document.getElementById('launchPlay');
+const sentence1 = document.getElementById('sentence1');
+const sentence2 = document.getElementById('sentence2');
 //const integer = document.getElementById('integer');
 
 
@@ -50,29 +52,14 @@ submit.addEventListener('click', () => {
     if (gameVal > 0) {
         showButtons();
         hideNumber();
-        hideInteger();
     } 
     else {
-        showInteger();
+        toggle()
         hideNumber()
         resetField();
     }
 });
 
-
-// Maybe useless TO FIXX
-submit2.addEventListener('click', () => {
-    numberGames();
-    submit2.value = gameVal;
-    if (gameVal > 0) {
-        showButtons();
-        hideNumber();
-        hideInteger();
-    } 
-    else {
-        resetField();
-    }
-});
 
 // Select Move
 rock.addEventListener('click', () => {
@@ -109,6 +96,8 @@ scissors.addEventListener('click', () => {
 function numberGames() {
     gameVal = document.querySelector('input').value;            // Saves number of games' value
 }
+
+
 
 // Launch game
 function game() {               
@@ -187,7 +176,7 @@ function computerPlay() {
 
 
 // DISPLAY FUNCTIONS
-// Hide play div
+// Hide playSentence div
 function hidePlay() {               
     if (playSentence.style.display === "none") {
       playSentence.style.display = "block";
@@ -211,31 +200,27 @@ function resultsDiv(){
 
 // Display/Hide the selection of number of games
 function showNumber() {            
-    document.getElementById('number').style.display = "block";
-}
-function hideNumber() {             
-    if (number.style.display === "none") {
-      number.style.display = "block";
-    } else {
-      number.style.display = "none";
-    }
+    document.getElementById('launchPlay').style.display = "block";
 }
 
-// Ask to select an integer or Hide TO FIX
-function showInteger() {         
-    document.getElementById('integer').style.display = "block";
+function toggle() {
+    if (document.getElementById("sentence1").style.visibility === "visible") {
+        document.getElementById("sentence1").style.visibility = "hidden";
+        document.getElementById("sentence2").style.visibility === "visible";
+      }
 }
-function hideInteger() {            
-    if (integer.style.display === "none") {
-      integer.style.display = "block";
+
+function hideNumber() {             
+    if (launchPlay.style.display === "none") {
+        launchPlay.style.display = "block";
     } else {
-      integer.style.display = "none";
+        launchPlay.style.display = "none";
     }
 }
 
 // Reset integer button and field
 function resetField() {         
-    input2.value= "";
+    input2.value = "";
 }
 
 
