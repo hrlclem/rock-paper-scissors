@@ -56,7 +56,6 @@ submit.addEventListener('click', () => {
     else {
         toggle()
         resetField();
-        console.log('bob');
     }
 });
 
@@ -204,11 +203,16 @@ function showNumber() {
 }
 
 function toggle() {
-    if (sentence1.style.visibility === "visible") {
-        console.log('icansee');
-        document.getElementById("sentence1").style.visibility == "hidden";
-        document.getElementById("sentence2").style.visibility == "visible";
-      }
+    let k = 0;
+    if (k === 0) {
+        sentence1.style.display = "none";
+        sentence2.style.display = "inline-block";
+        k += 1;
+    } else {
+        sentence1.style.display = "inline-block";
+        sentence2.style.display = "none";
+        k += 1;
+    }
 }
 
 function hideNumber() {             

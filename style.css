@@ -17,10 +17,8 @@ body{
 
 #sentence1 {
     display: inline-block;
-    visibility: visible;
 }
 
 #sentence2 {
     display: none;
-    visibility: hidden;
 }
