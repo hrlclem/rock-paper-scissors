@@ -9,9 +9,9 @@ let tie = 0;
 let i = 0;
 
 // Set all selectors
-const rock = document.querySelector('button[name="rock"]');
-const paper = document.querySelector('button[name="paper"]');
-const scissors = document.querySelector('button[name="scissors"]');
+const rock = document.querySelector('.rock');
+const paper = document.querySelector('.paper');
+const scissors = document.querySelector('.scissors');
 const play = document.querySelector('button[name="play"]');
 const submit = document.querySelector('button[name="submit"]');
 const submit2 = document.querySelector('button[name="submit2"]');
@@ -22,7 +22,6 @@ const buttons = document.getElementById('buttons');
 const launchPlay = document.getElementById('launchPlay');
 const sentence1 = document.getElementById('sentence1');
 const sentence2 = document.getElementById('sentence2');
-//const integer = document.getElementById('integer');
 
 
 
@@ -62,6 +61,7 @@ submit.addEventListener('click', () => {
 
 // Select Move
 rock.addEventListener('click', () => {
+    console.log('bob')
     game();                                                 // Launch game
     i++;                                                    // Count number of games
     if (i == gameVal) {resultsDiv(); hideButtons();}        // If number of games == games' value, show results and hide choice
