@@ -1,11 +1,11 @@
 // Set all needed variables
 const RPS = ['rock', 'paper', 'scissors'];
-let playerSelection;
+let playerSelection;        //Number of games
 let computerSelection;
-let gameVal;
-let playerScore = 0;
-let computerScore = 0;
-let tie = 0;
+let gameVal;                //Number of games
+let playerScore = 0;        //Player Score
+let computerScore = 0;      //Computer Score
+let tie = 0;                // Number of tie games
 let i = 0;
 
 // Set all selectors
@@ -22,7 +22,7 @@ const buttons = document.getElementById('buttons');
 const launchPlay = document.getElementById('launchPlay');
 const sentence1 = document.getElementById('sentence1');
 const sentence2 = document.getElementById('sentence2');
-const gameScore = document.querySelector('.gameScore');
+const currentGame = document.querySelector('.currentGame');
 
 
 
@@ -52,6 +52,7 @@ submit.addEventListener('click', () => {
     if (gameVal > 0) {
         showButtons();
         hideNumber();
+        showCurrentGame();
     } 
     else {
         toggle()
@@ -190,16 +191,23 @@ function resultsDiv(){
     newDiv.classList.add('results');
     document.body.appendChild(newDiv);
     if(playerScore > computerScore) {
-            newDiv.textContent += "You won!"
+            newDiv.textContent += "You won! 🎉"
         }
         else {
-            newDiv.textContent += "You lost... Would you like to play again?";
+            newDiv.textContent += "You lost... 😔 \r\n\r\n Would you like to play again?";
     }
 }
 
 // Display/Hide the selection of number of games
 function showNumber() {            
     document.getElementById('launchPlay').style.display = "block";
+}
+function hideNumber() {             
+    if (launchPlay.style.display === "none") {
+        launchPlay.style.display = "block";
+    } else {
+        launchPlay.style.display = "none";
+    }
 }
 
 function toggle() {
@@ -215,13 +223,7 @@ function toggle() {
     }
 }
 
-function hideNumber() {             
-    if (launchPlay.style.display === "none") {
-        launchPlay.style.display = "block";
-    } else {
-        launchPlay.style.display = "none";
-    }
-}
+
 
 // Reset integer button and field
 function resetField() {         
@@ -234,11 +236,22 @@ function resetField() {
 function showButtons() {          
     document.getElementById('buttons').style.display = "block";
  }
-
 function hideButtons() {
     if (buttons.style.display === "none") {
         buttons.style.display = "block";
       } else {
         buttons.style.display = "none";
       }
+}
+
+// Show current game situation
+function showCurrentGame() {            
+    currentGame.style.display = "block";
+}
+function hideCurrentGame() {             
+    if (currentGame.style.display === "none") {
+        currentGame.style.display = "block";
+    } else {
+        currentGame.style.display = "none";
+    }
 }
