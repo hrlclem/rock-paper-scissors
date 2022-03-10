@@ -2,7 +2,7 @@
 const RPS = ['rock', 'paper', 'scissors'];
 let playerSelection;        //Number of games
 let computerSelection;
-let gameVal;                //Number of games
+let gameVal = 2;                //Number of games
 let playerScore = 0;        //Player Score
 let computerScore = 0;      //Computer Score
 let tie = 0;                // Number of tie games
@@ -23,7 +23,7 @@ const launchPlay = document.getElementById('launchPlay');
 const sentence1 = document.getElementById('sentence1');
 const sentence2 = document.getElementById('sentence2');
 const currentGame = document.querySelector('.currentGame');
-
+const gameScore = document.querySelector('.gameScore');
 
 
 // TO DOOOOOOOOOOOOO fix the empty submit button and field, 
@@ -61,22 +61,26 @@ submit.addEventListener('click', () => {
 });
 
 
+
 // Select Move
 rock.addEventListener('click', () => {
     game();                                                 // Launch game
     i++;                                                    // Count number of games
+    gameScore.innerHTML = "GAME " + i + " / " + gameVal;    // Show GAME situation
     if (i == gameVal) {resultsDiv(); hideButtons();}        // If number of games == games' value, show results and hide choice
 });
 
 paper.addEventListener('click', () => {
     game();                                                 // Launch game
     i++;                                                    // Count number of games
+    gameScore.innerHTML = "GAME " + i + " / " + gameVal;    // Show GAME situation
     if (i == gameVal) {resultsDiv(); hideButtons();}        // If number of games == games' value, show results and hide choice
 });
 
 scissors.addEventListener('click', () => {
     game();                                                 // Launch game
     i++;                                                    // Count number of games
+    gameScore.innerHTML = "GAME " + i + " / " + gameVal;    // Show GAME situation
     if (i == gameVal) {resultsDiv(); hideButtons();}        // If number of games == games' value, show results and hide choice
 });
 
@@ -202,6 +206,7 @@ function resultsDiv(){
 function showNumber() {            
     document.getElementById('launchPlay').style.display = "block";
 }
+
 function hideNumber() {             
     if (launchPlay.style.display === "none") {
         launchPlay.style.display = "block";

@@ -17,6 +17,11 @@ body{
     color: white;
 }
 
+
+
+
+
+
 .intro {
     font-family: 'Bebas Neue', cursive;
     color: #212121;
@@ -58,6 +63,11 @@ body{
     padding: 5%;
 }
 
+
+
+
+
+
 .gamesSentence{
     font-family: 'Bebas Neue', cursive;
     color: #212121;
@@ -65,6 +75,16 @@ body{
     font-size: 4vw;
     padding-top:5%;
     text-shadow: 3px 3px 3px white;
+}
+
+.betweenSentence{
+    font-family: 'Bebas Neue', cursive;
+    color: #212121;
+    text-align:center;
+    font-size: 4vw;
+    padding-top:5%; 
+    text-shadow: 3px 3px 3px white;
+    
 }
 
 .input{
@@ -88,112 +108,66 @@ body{
     transition: border-color 0.2s;
 }
 
-.betweenSentence{
+
+
+
+
+
+
+.currentGame {
+    display: inline;
+    float: left;
+    width:40%;
+}
+
+.gameScore {
     font-family: 'Bebas Neue', cursive;
     color: #212121;
     text-align:center;
-    font-size: 4vw;
+    font-size: 2vw;
     padding-top:5%; 
-    text-shadow: 3px 3px 3px white;
     
 }
 
-.moveSelect{
+.playerMove, 
+.computerMove {
+    display: inline;
+    float: left;
+    width: 30%;
+
+}
+
+.rockPM, 
+.paperPM, 
+.scissorsPM, 
+.rockCM, 
+.paperCM, 
+.scissorsPM {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+.gamingIcon {
+    width:10%;
+    height: 10%;
+    padding: 5%;
+}
+
+.versus {
     font-family: 'Bebas Neue', cursive;
     color: #212121;
     text-align:center;
-    margin:10px;
-    font-size: 4vw;
-    text-shadow: 3px 3px 3px white;
-}
-
-.move {
-    display: inline-block;
-    text-align:center;
-    width: 50%;
-}
-
-.rock {
-    background-color: #e79bf5;
-    border-radius: 15px;
-    padding: 20px;
-    margin:10px;
-    width:100px;
-    height: 100px;
-    display: inline-block;
-    box-shadow:inset 0px 1px 0px 0px #efdcfb;
-	background-color:#bc80ea;
-	border:1px solid #c584f3;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:15px;
-	font-weight:bold;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #9752cc;
-}
-.rock:hover {
-    background-color:#c38fee;
-}
-.rock:active {
-	position:relative;
-	top:1px;
-}
-
-.paper {
-    background-color: #e79bf5;
-    border-radius: 15px;
-    padding: 20px;
-    margin:10px;
-    width:100px;
-    height: 100px;
-    display: inline-block;
-    box-shadow:inset 0px 1px 0px 0px #efdcfb;
-	background-color:#bc80ea;
-	border:1px solid #c584f3;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:15px;
-	font-weight:bold;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #9752cc;
-}
-.paper:hover {
-    background-color:#c38fee;
-}
-.paper:active {
-	position:relative;
-	top:1px;
+    font-size: 7vw;
+    padding-top:10px; 
+    
 }
 
 
-.scissors {
-    background-color: #e79bf5;
-    border-radius: 15px;
-    padding: 20px;
-    margin:10px;
-    width:100px;
-    height: 100px;
-    display: inline-block;
-    box-shadow:inset 0px 1px 0px 0px #efdcfb;
-	background-color:#bc80ea;
-	border:1px solid #c584f3;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:15px;
-	font-weight:bold;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #9752cc;
-}
-.scissors:hover {
-    background-color:#c38fee;
-}
-.scissors:active {
-	position:relative;
-	top:1px;
-}
+
+
+
+
 
 
 
@@ -208,9 +182,69 @@ body{
 }
 
 
+
+
+
+
+
+.moveSelect{
+    font-family: 'Bebas Neue', cursive;
+    color: #212121;
+    text-align:center;
+    margin:10px;
+    font-size: 4vw;
+    text-shadow: 3px 3px 3px white;
+}
+
+.move {
+    display: inline-block;
+    text-align:center;
+    width: 100%;
+    padding-bottom: 50px;
+}
+
+.rock, 
+.paper, 
+.scissors {
+    background-color: #e79bf5;
+    border-radius: 15px;
+    padding: 20px;
+    margin:10px;
+    width:10%;
+    height: 10%;
+    display: inline-block;
+    box-shadow:inset 0px 1px 0px 0px #efdcfb;
+	background-color:#bc80ea;
+	border:1px solid #c584f3;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #9752cc;
+}
+.rock:hover, 
+.paper:hover, 
+.scissors:hover {
+    background-color:#c38fee;
+}
+.rock:active, 
+.paper:active, 
+.scissors:active {
+	position:relative;
+	top:1px;
+}
+
+
+
+
+
+
+
+
 #buttons {
     display: none;
-    width: 100%;
 }
 
 #launchPlay {
@@ -228,6 +262,13 @@ body{
 #sentence2 {
     display: none;
 }
+
+
+
+
+
+
+
 
 .footer {
     font-family: arial;
