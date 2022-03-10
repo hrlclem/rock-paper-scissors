@@ -22,6 +22,7 @@ const buttons = document.getElementById('buttons');
 const launchPlay = document.getElementById('launchPlay');
 const sentence1 = document.getElementById('sentence1');
 const sentence2 = document.getElementById('sentence2');
+const gameScore = document.querySelector('.gameScore');
 
 
 
@@ -230,7 +231,7 @@ function resetField() {
 
 
 // Display/Hide buttons to choose from 3 moves
-function showButtons() {            
+function showButtons() {          
     document.getElementById('buttons').style.display = "block";
  }
 
