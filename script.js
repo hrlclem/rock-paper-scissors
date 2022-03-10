@@ -188,7 +188,7 @@ function resultsDiv(){
     const newDiv = document.createElement("div");
     newDiv.classList.add('results');
     document.body.appendChild(newDiv);
-    if(playerSelection > computerSelection) {
+    if(playerScore > computerScore) {
             newDiv.textContent += "You won!"
         }
         else {

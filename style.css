@@ -103,7 +103,6 @@ body{
     color: #212121;
     text-align:center;
     font-size: 4vw;
-    padding-top:5%; 
     text-shadow: 3px 3px 3px white;
 }
 
@@ -111,7 +110,6 @@ body{
     display: inline-block;
     text-align:center;
     width: 50%;
-    margin-top: 5%
 }
 
 .rock {
