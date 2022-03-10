@@ -61,7 +61,6 @@ submit.addEventListener('click', () => {
 
 // Select Move
 rock.addEventListener('click', () => {
-    console.log('bob')
     game();                                                 // Launch game
     i++;                                                    // Count number of games
     if (i == gameVal) {resultsDiv(); hideButtons();}        // If number of games == games' value, show results and hide choice
