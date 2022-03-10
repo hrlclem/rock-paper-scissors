@@ -102,6 +102,7 @@ body{
     font-family: 'Bebas Neue', cursive;
     color: #212121;
     text-align:center;
+    margin:10px;
     font-size: 4vw;
     text-shadow: 3px 3px 3px white;
 }
