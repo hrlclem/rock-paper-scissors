@@ -110,15 +110,11 @@ body{
 
 
 
-
-
-
 .gameScore {
     font-family: 'Bebas Neue', cursive;
     color: #212121;
     text-align:center;
     font-size: 2vw;
-    padding-bottom:20px; 
 }
 
 .result {
@@ -180,12 +176,20 @@ body{
     color: #212121;
     text-align:center;
     font-size: 4vw;
-    padding-top:5%;
     text-shadow: 3px 3px 3px white;
     white-space: pre-line;
 }
 
-
+.score {
+    display: inline-block;
+    font-weight: bold;
+    font-size: 1.5vw;
+    padding-left: 8%;
+    padding-right: 8%;
+    font-family: arial;
+    color: #212121;
+    text-align:center;
+}
 
 
 
