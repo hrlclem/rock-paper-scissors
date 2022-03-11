@@ -2,7 +2,7 @@
 const RPS = ['rock', 'paper', 'scissors'];
 let playerSelection;        //Number of games
 let computerSelection;
-let gameVal = 2;                //Number of games
+let gameVal = 2;            //Number of games
 let playerScore = 0;        //Player Score
 let computerScore = 0;      //Computer Score
 let tie = 0;                // Number of tie games
