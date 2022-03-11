@@ -130,7 +130,7 @@ function playScore() {
 }
 function compScore() {
     cScore.innerHTML = 'Computer: ' + computerScore;
-    cScore.style.display = "block";
+    pScore.style.display = "block";
 }
 
 
