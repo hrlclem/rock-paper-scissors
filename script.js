@@ -32,6 +32,8 @@ const paperPM = document.querySelector('.paperPM');
 const scissorsPM = document.querySelector('.scissorsPM');
 const waitingCM = document.querySelector('.waitingCM');
 const waitingPM = document.querySelector('.waitingPM');
+const pScore = document.getElementById('pScore');
+const cScore = document.getElementById('cScore');
 
 
 
@@ -66,6 +68,8 @@ rock.addEventListener('click', () => {
     game();                                                 // Launch game
     rockSelected();                                         
     showComputerMove();
+    playScore();
+    compScore();
     i++;                                                    // Count number of games
     gameScore.innerHTML = "GAME " + i + " / " + gameVal;    // Show GAME situation
     if (i == gameVal) {resultsDiv(); hideButtons();}        // If number of games == games' value, show results and hide choice
@@ -75,6 +79,8 @@ paper.addEventListener('click', () => {
     game();                                                 // Launch game
     paperSelected();
     showComputerMove();
+    playScore();
+    compScore();
     i++;                                                    // Count number of games
     gameScore.innerHTML = "GAME " + i + " / " + gameVal;    // Show GAME situation
     if (i == gameVal) {resultsDiv(); hideButtons();}        // If number of games == games' value, show results and hide choice
@@ -84,6 +90,8 @@ scissors.addEventListener('click', () => {
     game();                                                 // Launch game
     scissorsSelected();
     showComputerMove();
+    playScore();
+    compScore();
     i++;                                                    // Count number of games
     gameScore.innerHTML = "GAME " + i + " / " + gameVal;    // Show GAME situation
     if (i == gameVal) {resultsDiv(); hideButtons();}        // If number of games == games' value, show results and hide choice
@@ -112,11 +120,24 @@ function numberGames() {
 function game() {               
     computerSelection = computerPlay();                         // Computer chooses
     playRound(playerSelection, computerSelection, tie);         // Add points depending on selections
+    playScore();
+    compScore();
     console.log('Computer ' + computerScore +                   // Display results
                 ' - Player ' + playerScore + 
                 '      //      Tie - ' + tie);   
     return computerSelection;     
 };
+
+
+// Display scores
+function playScore() {
+    pScore.innerHTML = 'Player: ' + playerScore;
+}
+function compScore() {
+    cScore.innerHTML = 'Computer: ' + computerScore;
+}
+
+
 
 // Process play
 function playRound() {          
@@ -328,3 +349,4 @@ function showComputerMove() {
         scissorsCM.style.display = "block";
     }
 }
+
