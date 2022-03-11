@@ -114,8 +114,8 @@ function numberGames() {
 function game() {               
     computerSelection = computerPlay();                         // Computer chooses
     playRound(playerSelection, computerSelection, tie);         // Add points depending on selections
-    playScore();
-    compScore();
+    playScore();                                                // Displays player score
+    compScore();                                                // Displays computer score
     console.log('Computer ' + computerScore +                   // Display results
                 ' - Player ' + playerScore + 
                 '      //      Tie - ' + tie);   
@@ -126,9 +126,11 @@ function game() {
 // Display scores
 function playScore() {
     pScore.innerHTML = 'Player: ' + playerScore;
+    pScore.style.display = "block";
 }
 function compScore() {
     cScore.innerHTML = 'Computer: ' + computerScore;
+    cScore.style.display = "block";
 }
 
 
