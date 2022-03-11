@@ -125,6 +125,8 @@ body{
     display:flex;
     justify-content: center;
     align-items: center;
+    padding-left: 30%;
+    padding-right: 30%;
 }
 
 .playerMove, 
@@ -138,12 +140,13 @@ body{
 .rockCM, 
 .paperCM, 
 .scissorsCM {
-    width: 100%;
-    height: 100%;
+    display: none;
+    width: 1em;
+    height: 1em;
 }
 
 .gamingIcon {
-    width: 40%;
+    width: 60%;
     height: 40%;
     padding: 5%;
 }
@@ -159,7 +162,12 @@ body{
 }
 
 
-
+.waitingCM,
+.waitingPM {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
 
 
 
@@ -274,6 +282,7 @@ body{
     position: fixed;
     bottom: 0;
     width: 100%;
+    padding-bottom: 10px;
     text-align: center;
 }
 

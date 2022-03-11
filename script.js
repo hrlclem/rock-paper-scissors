@@ -2,7 +2,7 @@
 const RPS = ['rock', 'paper', 'scissors'];
 let playerSelection;        //Number of games
 let computerSelection;
-let gameVal = 2;            //Number of games
+let gameVal = 0;            //Number of games
 let playerScore = 0;        //Player Score
 let computerScore = 0;      //Computer Score
 let tie = 0;                // Number of tie games
@@ -24,6 +24,14 @@ const sentence1 = document.getElementById('sentence1');
 const sentence2 = document.getElementById('sentence2');
 const currentGame = document.querySelector('.currentGame');
 const gameScore = document.querySelector('.gameScore');
+const rockCM = document.querySelector('.rockCM');
+const paperCM = document.querySelector('.paperCM');
+const scissorsCM = document.querySelector('.scissorsCM');
+const rockPM = document.querySelector('.rockPM');
+const paperPM = document.querySelector('.paperPM');
+const scissorsPM = document.querySelector('.scissorsPM');
+const waitingCM = document.querySelector('.waitingCM');
+const waitingPM = document.querySelector('.waitingPM');
 
 
 // TO DOOOOOOOOOOOOO fix the empty submit button and field, 
@@ -54,7 +62,7 @@ submit.addEventListener('click', () => {
         showButtons();
         hideNumber();
         showCurrentGame();
-        if(i = )
+        showWaitingFirstMove()
     } 
     else {
         toggle()
@@ -69,6 +77,7 @@ rock.addEventListener('click', () => {
     game();                                                 // Launch game
     i++;                                                    // Count number of games
     gameScore.innerHTML = "GAME " + i + " / " + gameVal;    // Show GAME situation
+    showWaitingFirstMove()
     if (i == gameVal) {resultsDiv(); hideButtons();}        // If number of games == games' value, show results and hide choice
 });
 
@@ -76,6 +85,7 @@ paper.addEventListener('click', () => {
     game();                                                 // Launch game
     i++;                                                    // Count number of games
     gameScore.innerHTML = "GAME " + i + " / " + gameVal;    // Show GAME situation
+    showWaitingFirstMove()
     if (i == gameVal) {resultsDiv(); hideButtons();}        // If number of games == games' value, show results and hide choice
 });
 
@@ -251,6 +261,31 @@ function hideButtons() {
       }
 }
 
+// Game waiting for first move
+function showWaitingFirstMove() {
+    rockCM.style.display === "none";
+    paperCM.style.display === "none";
+    scissorsCM.style.display === "none";
+    rockPM.style.display === "none";
+    paperPM.style.display === "none";
+    scissorsPM.style.display === "none";
+    waitingCM.style.display === "block";
+    waitingPM.style.display === "block";
+}
+
+function hideWaitingFirstMove() {
+    rockCM.style.display === "block";
+    paperCM.style.display === "block";
+    scissorsCM.style.display === "block";
+    rockPM.style.display === "block";
+    paperPM.style.display === "block";
+    scissorsPM.style.display === "block";
+    waitingCM.style.display === "none";
+    waitingPM.style.display === "none";
+}
+
+
+
 // Show current game situation
 function showCurrentGame() {            
     currentGame.style.display = "block";
@@ -262,3 +297,4 @@ function hideCurrentGame() {
         currentGame.style.display = "none";
     }
 }
+
