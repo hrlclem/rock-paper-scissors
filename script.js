@@ -34,17 +34,6 @@ const waitingCM = document.querySelector('.waitingCM');
 const waitingPM = document.querySelector('.waitingPM');
 
 
-// TO DOOOOOOOOOOOOO fix the empty submit button and field, 
-// if clicked more than 5 times "I can't do anything for you...", 
-// After 5 sec, reset back to step1
-//
-// Design everything to make it proper game
-//
-// Maybe update show/Hide to toggle
-//
-// Reduce code and optimize
-
-
 
 // PLAY FUNCTIONS
 // Launch game
@@ -271,16 +260,6 @@ function showWaitingFirstMove() {
     waitingPM.style.display === "block";
 }
 
-function hideWaitingFirstMove() {
-    rockCM.style.display === "block";
-    paperCM.style.display === "block";
-    scissorsCM.style.display === "block";
-    rockPM.style.display === "block";
-    paperPM.style.display === "block";
-    scissorsPM.style.display === "block";
-    waitingCM.style.display === "none";
-    waitingPM.style.display === "none";
-}
 
 
 
