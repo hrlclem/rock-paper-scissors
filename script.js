@@ -64,7 +64,8 @@ submit.addEventListener('click', () => {
 // Select Move
 rock.addEventListener('click', () => {
     game();                                                 // Launch game
-    rockSelected();
+    rockSelected();                                         
+    showComputerMove();
     i++;                                                    // Count number of games
     gameScore.innerHTML = "GAME " + i + " / " + gameVal;    // Show GAME situation
     if (i == gameVal) {resultsDiv(); hideButtons();}        // If number of games == games' value, show results and hide choice
@@ -73,6 +74,7 @@ rock.addEventListener('click', () => {
 paper.addEventListener('click', () => {
     game();                                                 // Launch game
     paperSelected();
+    showComputerMove();
     i++;                                                    // Count number of games
     gameScore.innerHTML = "GAME " + i + " / " + gameVal;    // Show GAME situation
     if (i == gameVal) {resultsDiv(); hideButtons();}        // If number of games == games' value, show results and hide choice
@@ -81,6 +83,7 @@ paper.addEventListener('click', () => {
 scissors.addEventListener('click', () => {
     game();                                                 // Launch game
     scissorsSelected();
+    showComputerMove();
     i++;                                                    // Count number of games
     gameScore.innerHTML = "GAME " + i + " / " + gameVal;    // Show GAME situation
     if (i == gameVal) {resultsDiv(); hideButtons();}        // If number of games == games' value, show results and hide choice
@@ -111,7 +114,8 @@ function game() {
     playRound(playerSelection, computerSelection, tie);         // Add points depending on selections
     console.log('Computer ' + computerScore +                   // Display results
                 ' - Player ' + playerScore + 
-                '      //      Tie - ' + tie);        
+                '      //      Tie - ' + tie);   
+    return computerSelection;     
 };
 
 // Process play
@@ -284,6 +288,7 @@ function hideCurrentGame() {
     }
 }
 
+// If MOVE selected shows MOVE icon
 function rockSelected() {
     hideWaitingFirstMove();
     rockPM.style.display = "block";
@@ -298,7 +303,6 @@ function paperSelected() {
     scissorsPM.style.display = "none";
     waitingPM.style.display = "none";
 }
-
 function scissorsSelected() {
     hideWaitingFirstMove();
     rockPM.style.display = "none";
@@ -307,19 +311,20 @@ function scissorsSelected() {
     waitingPM.style.display = "none";
 }
 
-function showComputerMove(computerSelection) {
-    console.log(computerSelecton);
+
+// Shows computer MOVE icon
+function showComputerMove() {
     if(computerSelection === 'rock'){
-        rockPM.style.display = "block";
-        paperPM.style.display = "none";
-        scissorsPM.style.display = "none";
+        rockCM.style.display = "block";
+        paperCM.style.display = "none";
+        scissorsCM.style.display = "none";
     } else if(computerSelection === 'paper'){
-        rockPM.style.display = "none";
-        paperPM.style.display = "block";
-        scissorsPM.style.display = "none";
+        rockCM.style.display = "none";
+        paperCM.style.display = "block";
+        scissorsCM.style.display = "none";
     } else if(computerSelection === 'scissors'){
-        rockPM.style.display = "none";
-        paperPM.style.display = "none";
-        scissorsPM.style.display = "block";
+        rockCM.style.display = "none";
+        paperCM.style.display = "none";
+        scissorsCM.style.display = "block";
     }
 }
