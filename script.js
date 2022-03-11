@@ -36,7 +36,6 @@ const pScore = document.getElementById('pScore');
 const cScore = document.getElementById('cScore');
 
 
-
 // PLAY FUNCTIONS
 // Launch game
 play.addEventListener('click', () => {
@@ -46,8 +45,8 @@ play.addEventListener('click', () => {
 
 // Select number of games
 submit.addEventListener('click', () => {
-    numberGames();
     submit.value = gameVal;
+    numberGames();
     gameScore.innerHTML = "Highest score of " + gameVal + " games, wins!";  
     if (gameVal > 0) {
         showButtons();
@@ -106,6 +105,10 @@ scissors.addEventListener('click', () => {
 // Get number of games to play
 function numberGames() {
     gameVal = document.querySelector('input').value;            // Saves number of games' value
+    if (gameVal > 10) {
+        toggle();
+        resetField();
+    }
 }
 
 
@@ -116,9 +119,6 @@ function game() {
     playRound(playerSelection, computerSelection, tie);         // Add points depending on selections
     playScore();                                                // Displays player score
     compScore();                                                // Displays computer score
-    console.log('Computer ' + computerScore +                   // Display results
-                ' - Player ' + playerScore + 
-                '      //      Tie - ' + tie);   
     return computerSelection;     
 };
 
@@ -221,7 +221,7 @@ function resultsDiv(){
             newDiv.textContent += "You won! 🎉"
         }
         else {
-            newDiv.textContent += "You lost... 😔 \r\n\r\n Would you like to play again?";
+            newDiv.textContent += "You lost... 😔";
     }
 }
 
