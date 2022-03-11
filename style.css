@@ -15,6 +15,7 @@ body{
     font-size: 3vw;
     font-family: 'Staatliches', cursive;
     color: white;
+    margin-bottom: 5%;
 }
 
 
@@ -26,7 +27,6 @@ body{
     color: #212121;
     text-align:center;
     font-size: 4vw;
-    padding-top:5%;
     text-shadow: 3px 3px 3px white;
 }
 
@@ -96,7 +96,6 @@ body{
     color: #212121;
     text-align:center;
     font-size: 4vw;
-    padding-top:5%;
     text-shadow: 3px 3px 3px white;
 }
 
@@ -105,7 +104,6 @@ body{
     color: #212121;
     text-align:center;
     font-size: 4vw;
-    padding-top:5%; 
     text-shadow: 3px 3px 3px white;
     
 }
@@ -116,7 +114,7 @@ body{
     display: block;
     margin-right: auto;
     margin-left: auto;
-    margin-bottom: 5%;;
+    margin-bottom: 5%;
     width: 30%;
     box-sizing:border-box;
     font-family: Arial;
@@ -177,7 +175,6 @@ body{
 .gamingIcon, .waitingIcon {
     width: 60%;
     height: 40%;
-    padding: 5%;
 }
 
 .waitingIcon {
@@ -224,10 +221,8 @@ body{
     display: inline-block;
     font-weight: bold;
     font-size: 1.5vw;
-    padding-left: 8%;
-    padding-right: 8%;
     font-family: arial;
-    color: #212121;
+    color: #525050;
     text-align:center;
 }
 
@@ -240,7 +235,6 @@ body{
     color: #212121;
     text-align:center;
     margin:1%;
-    padding-top:2%; 
     font-size: 4vw;
     text-shadow: 3px 3px 3px white;
 }
