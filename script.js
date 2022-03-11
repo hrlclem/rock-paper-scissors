@@ -306,3 +306,20 @@ function scissorsSelected() {
     scissorsPM.style.display = "block";
     waitingPM.style.display = "none";
 }
+
+function showComputerMove(computerSelection) {
+    console.log(computerSelecton);
+    if(computerSelection === 'rock'){
+        rockPM.style.display = "block";
+        paperPM.style.display = "none";
+        scissorsPM.style.display = "none";
+    } else if(computerSelection === 'paper'){
+        rockPM.style.display = "none";
+        paperPM.style.display = "block";
+        scissorsPM.style.display = "none";
+    } else if(computerSelection === 'scissors'){
+        rockPM.style.display = "none";
+        paperPM.style.display = "none";
+        scissorsPM.style.display = "block";
+    }
+}
