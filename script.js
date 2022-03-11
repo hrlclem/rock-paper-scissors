@@ -57,7 +57,7 @@ play.addEventListener('click', () => {
 submit.addEventListener('click', () => {
     numberGames();
     submit.value = gameVal;
-    gameScore.innerHTML = "Highest score of " + gameVal + " games, win!";  
+    gameScore.innerHTML = "Highest score of " + gameVal + " games, wins!";  
     if (gameVal > 0) {
         showButtons();
         hideNumber();
