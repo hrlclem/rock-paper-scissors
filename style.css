@@ -10,9 +10,9 @@ body{
 
 .header {
     text-align:center;
-    padding: 2%;
+    padding: 1%;
     background-color: #512DA8;
-    font-size: 5vw;
+    font-size: 3vw;
     font-family: 'Staatliches', cursive;
     color: white;
 }
@@ -155,10 +155,10 @@ body{
     font-family: 'Bebas Neue', cursive;
     color: #212121;
     font-size: 7vw;
-    padding-right: 20px;
-    padding-left: 20px;
-    height: 20%;
-    width: 7%;
+    margin-right: 20px;
+    margin-left: 20px;
+    height: 10%;
+    width: 20%;
 }
 
 
@@ -195,8 +195,8 @@ body{
     font-family: 'Bebas Neue', cursive;
     color: #212121;
     text-align:center;
-    margin:10px;
-    padding-top:40px; 
+    margin:1%;
+    padding-top:2%; 
     font-size: 4vw;
     text-shadow: 3px 3px 3px white;
 }

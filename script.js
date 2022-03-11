@@ -77,7 +77,6 @@ rock.addEventListener('click', () => {
     game();                                                 // Launch game
     i++;                                                    // Count number of games
     gameScore.innerHTML = "GAME " + i + " / " + gameVal;    // Show GAME situation
-    showWaitingFirstMove()
     if (i == gameVal) {resultsDiv(); hideButtons();}        // If number of games == games' value, show results and hide choice
 });
 
@@ -85,7 +84,6 @@ paper.addEventListener('click', () => {
     game();                                                 // Launch game
     i++;                                                    // Count number of games
     gameScore.innerHTML = "GAME " + i + " / " + gameVal;    // Show GAME situation
-    showWaitingFirstMove()
     if (i == gameVal) {resultsDiv(); hideButtons();}        // If number of games == games' value, show results and hide choice
 });
 
