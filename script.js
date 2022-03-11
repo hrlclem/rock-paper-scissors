@@ -6,7 +6,7 @@ let gameVal = 2;            //Number of games
 let playerScore = 0;        //Player Score
 let computerScore = 0;      //Computer Score
 let tie = 0;                // Number of tie games
-let i = 0;
+let i = 0;                  // Games played at given moment
 
 // Set all selectors
 const rock = document.querySelector('.rock');
@@ -49,10 +49,12 @@ play.addEventListener('click', () => {
 submit.addEventListener('click', () => {
     numberGames();
     submit.value = gameVal;
+    gameScore.innerHTML = "Highest score of " + gameVal + " games, win!";  
     if (gameVal > 0) {
         showButtons();
         hideNumber();
         showCurrentGame();
+        if(i = )
     } 
     else {
         toggle()
