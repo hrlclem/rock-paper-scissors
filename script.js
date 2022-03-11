@@ -64,6 +64,7 @@ submit.addEventListener('click', () => {
 // Select Move
 rock.addEventListener('click', () => {
     game();                                                 // Launch game
+    rockSelected();
     i++;                                                    // Count number of games
     gameScore.innerHTML = "GAME " + i + " / " + gameVal;    // Show GAME situation
     if (i == gameVal) {resultsDiv(); hideButtons();}        // If number of games == games' value, show results and hide choice
@@ -71,6 +72,7 @@ rock.addEventListener('click', () => {
 
 paper.addEventListener('click', () => {
     game();                                                 // Launch game
+    paperSelected();
     i++;                                                    // Count number of games
     gameScore.innerHTML = "GAME " + i + " / " + gameVal;    // Show GAME situation
     if (i == gameVal) {resultsDiv(); hideButtons();}        // If number of games == games' value, show results and hide choice
@@ -78,6 +80,7 @@ paper.addEventListener('click', () => {
 
 scissors.addEventListener('click', () => {
     game();                                                 // Launch game
+    scissorsSelected();
     i++;                                                    // Count number of games
     gameScore.innerHTML = "GAME " + i + " / " + gameVal;    // Show GAME situation
     if (i == gameVal) {resultsDiv(); hideButtons();}        // If number of games == games' value, show results and hide choice
@@ -250,15 +253,21 @@ function hideButtons() {
 
 // Game waiting for first move
 function showWaitingFirstMove() {
-    rockCM.style.display === "none";
-    paperCM.style.display === "none";
-    scissorsCM.style.display === "none";
-    rockPM.style.display === "none";
-    paperPM.style.display === "none";
-    scissorsPM.style.display === "none";
-    waitingCM.style.display === "block";
-    waitingPM.style.display === "block";
+    rockCM.style.display = "none";
+    paperCM.style.display = "none";
+    scissorsCM.style.display = "none";
+    rockPM.style.display = "none";
+    paperPM.style.display = "none";
+    scissorsPM.style.display = "none";
+    waitingCM.style.display = "block";
+    waitingPM.style.display = "block";
 }
+function hideWaitingFirstMove() {
+    waitingCM.style.display = "none";
+    waitingPM.style.display = "none";
+}
+
+
 
 
 
@@ -275,3 +284,25 @@ function hideCurrentGame() {
     }
 }
 
+function rockSelected() {
+    hideWaitingFirstMove();
+    rockPM.style.display = "block";
+    paperPM.style.display = "none";
+    scissorsPM.style.display = "none";
+    waitingPM.style.display = "none";
+}
+function paperSelected() {
+    hideWaitingFirstMove();
+    rockPM.style.display = "none";
+    paperPM.style.display = "block";
+    scissorsPM.style.display = "none";
+    waitingPM.style.display = "none";
+}
+
+function scissorsSelected() {
+    hideWaitingFirstMove();
+    rockPM.style.display = "none";
+    paperPM.style.display = "none";
+    scissorsPM.style.display = "block";
+    waitingPM.style.display = "none";
+}
